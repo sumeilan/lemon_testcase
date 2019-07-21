@@ -36,7 +36,7 @@ class MyTestSuite(unittest.TestCase):
             print('出错了:',e)
 
         assert_that(response.json()['code']).is_equal_to(0)
-        assert_that(datas['id']).is_equal_to(10421)
+        assert_that(datas['id']).is_equal_to(1042)
         assert_that(datas['nickname']).is_not_none()
 
 

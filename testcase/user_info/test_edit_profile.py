@@ -18,7 +18,7 @@ class MyTestSuite(unittest.TestCase):
     def tearDown(self):
         pass
 
-    @data('SB')
+    @data('588')
     def test_edit_profile(self, nickname):
         token = file_operation.read_file('token.json')
         body = {
@@ -38,7 +38,7 @@ class MyTestSuite(unittest.TestCase):
             headers = file_operation.read_file('headers.json')
             response = requests.post(
                 url, json=body, headers=headers, verify=False)
-            # print(response.text)
+            print(response.text)
             datas = response.json()
 
         except Exception as e:
