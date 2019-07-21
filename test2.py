@@ -2,7 +2,6 @@ import hashlib
 import hmac
 import base64
 import json
-#test
 
 secretKey = 'SwYNTwt5qPABx29Atyi0'
 body='{"page":"1","pageSize":"20","app_key":"lemondream"}'
