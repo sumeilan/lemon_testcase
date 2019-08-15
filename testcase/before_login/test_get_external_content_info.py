@@ -17,7 +17,7 @@ class MyTestSuite(unittest.TestCase):
     def tearDown(self):
         pass
 
-    @file_data(r"E:\test_python\lemon_testcase\config\datas.json")
+    @file_data(r"D:\pycharm\lemon_testcase\config\datas.json")
     def test_get_external_content_info(self, value):
         body = {'content_id': 190648615}
         HmacSHA256.sh256(json.dumps(body))

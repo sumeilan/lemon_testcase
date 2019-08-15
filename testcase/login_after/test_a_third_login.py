@@ -29,8 +29,10 @@ class MyTestSuite(unittest.TestCase):
             response = requests.post(url, json=body, headers=headers, verify=False)
             datas = response.json()['data']
             token = {'access_token': datas['access_token'],'refresh_token':datas['refresh_token']}
+            uid = {'uid':datas['uid']}
             # print(token)
             file_operation.write_file(token, 'token.json')
+            file_operation.write_file(uid, 'datas.json')
         except Exception as e:
             print('出错了:', e)
         assert_that(response.json()['code']).is_equal_to(0)
