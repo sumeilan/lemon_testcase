@@ -18,7 +18,7 @@ class MyTestSuite(unittest.TestCase):
     def tearDown(self):
         pass
 
-    @data('588')
+    @data('699','588')
     def test_edit_profile(self, nickname):
         token = file_operation.read_file('token.json')
         body = {
@@ -46,8 +46,6 @@ class MyTestSuite(unittest.TestCase):
 
         assert_that(response.json()['code']).is_equal_to(0)
         assert_that(datas['msg']).is_equal_to('请求成功')
-
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -17,8 +17,11 @@ class MyTestSuite(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_comfig2(self):
-        url = 'http://lemon_config2.chumanapp.com/demo.php?system=android&version=0.6.0'
+    @data('0.9.1', '0.9.0')
+    def test_config2(self,version):
+        path = '/config.php?system=android&version=' + version
+        url = readConfig.ReadConfig.get_http('config_url') + path
+
         try:
             response = requests.get(url,  verify=False)
             # print(response.text)
@@ -27,8 +30,7 @@ class MyTestSuite(unittest.TestCase):
         except Exception as e:
 	        print('出错了:', e)
         assert_that(response.json()['status']).is_equal_to('ok')
-        assert_that(datas['app_key']).is_in('lemondream', 'lemondream_2')
-        assert_that(datas['api_host']).is_in('http://lemondream.chumanapp.com/', 'http://api.lemondream.cn/',
+        assert_that(datas['api_host']).is_in('http://lemondream.chumanapp.com/', 'http://api-lemon.chumanapp.com/',
                                              'http://139.9.213.120/')
         assert_that(datas).contains_key('api_host','app_key','share_icon','app_share_url','cm_qiniu_public','cm_qiniu_server','cm_normal_video_url','cm_secret_video_url')
 

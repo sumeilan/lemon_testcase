@@ -39,10 +39,9 @@ class MyTestSuite(unittest.TestCase):
 
         except Exception as e:
 	        print('出错了:', e)
-        assert_that(response.json()['code']).is_equal_to(0)
+        assert_that(response.status_code).is_equal_to(200)
         for i in range(0, len(tpyes)):
             assert_that(tpyes[i]).is_not_empty()
-            assert_that(tpyes[i]).is_type_of(str)
             assert_that(['1', '2', '4', '7', '8', '9', '10']
                         ).contains(tpyes[i])
 

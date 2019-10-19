@@ -33,7 +33,6 @@ class MyTestSuite(unittest.TestCase):
         except Exception as e:
             print('出错了:', e)
         assert_that(response.json()['code']).is_equal_to(0)
-
         single_info = response.json()['data']['info']
         assert_that(single_info['content']).is_not_none()
 

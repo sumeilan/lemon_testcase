@@ -29,7 +29,7 @@ class MyTestSuite(unittest.TestCase):
             response = requests.post(url, json=body, headers=headers, verify=False)
             datas = response.json()['data']
             token = {'access_token': datas['access_token'],'refresh_token':datas['refresh_token']}
-            # print(token)
+            print(response.text)
             file_operation.write_file(token, 'token.json')
         except Exception as e:
             print('出错了:', e)
