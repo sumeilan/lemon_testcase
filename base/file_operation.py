@@ -1,12 +1,11 @@
 #! /usr/bin/python
 # coding:utf-8
-
 from config import readConfig
 import json
 
 def read_file(filename):
     config_path = readConfig.ReadConfig.get_config_path('path')
-    # print(config_path)
+    print(config_path)
     with open(config_path + filename, 'r') as load_f:
         datas = json.load(load_f)
     return datas
@@ -30,7 +29,7 @@ if __name__ == '__main__':
 		"Authorization": 'testttttttttttttttttttttt'
 	}
 
-# writer_headers = write_file(headers, 'headers.json')
-# read_headers = read_file('headers.json')
+writer_headers = write_file(headers, 'headers.json')
+read_headers = read_file('headers.json')
 
 
