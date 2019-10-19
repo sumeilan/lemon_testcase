@@ -21,6 +21,5 @@ class ReadConfig():
 
 
 if __name__ == '__main__':
-	print()
-    # print(config_path)
-    # print(path)
+    cc = ReadConfig.get_config_path('path')
+    print(cc)

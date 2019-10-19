@@ -5,22 +5,32 @@ from config import readConfig
 import json
 
 def read_file(filename):
-	config_path = readConfig.ReadConfig.get_config_path('path')
-	with open(config_path + filename, 'r') as load_f:
-		datas = json.load(load_f)
-	return datas
+    config_path = readConfig.ReadConfig.get_config_path('path')
+    # print(config_path)
+    with open(config_path + filename, 'r') as load_f:
+        datas = json.load(load_f)
+    return datas
 
 def write_file(param,filename):
-	config_path = readConfig.ReadConfig.get_config_path('path')
-	with open(config_path + filename, "w") as f:
-		json.dump(param, f)
+    config_path = readConfig.ReadConfig.get_config_path('path')
+    with open(config_path + filename, "w") as f:
+        json.dump(param, f)
+
+# #json 追加
+# def a_write_file(param,filename):
+#     config_path = readConfig.ReadConfig.get_config_path('path')
+#     with open(config_path + filename, 'r') as load_f:
+#         old = json.load(load_f)
+#         print(old)
+
 
 if __name__ == '__main__':
-	headers = {
+    headers = {
 		"X-Token": "4b5e4c5a02",
 		"Authorization": 'testttttttttttttttttttttt'
 	}
 
-	writer_headers = write_file(headers, 'headers.json')
-	read_headers = read_file('headers.json')
-	print(read_headers)
+# writer_headers = write_file(headers, 'headers.json')
+# read_headers = read_file('headers.json')
+
+
